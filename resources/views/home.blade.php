@@ -6,13 +6,80 @@
 
         <div class="posts bg-gray-5000 w-2/5">
 
+            @if(request()->has('search'))
+
+            <!-- Start Search -->
+
+                <div>
+
+                    <h1 class="mb-4 font-semibold text-gray42" style="font-size: 3rem;">Results for <span class="text-black">{{request()->search}}</span></h1>
+
+                    <!-- Start Words -->
+
+                    <a href="" class="w-16" style="border-bottom: 1px solid rgb(36, 36, 36);">For You</a>
+
+                    @foreach(['Stories','People','Publication','Topics','Lists'] as $item)
+
+                        <a href="" class="text-gray42">{{$item}}</a>
+
+                    @endforeach
+
+                    <!-- End Words -->
+
+
+                </div>
+
+            <!-- End Search -->
+
+            @else
+
+            <!-- Topics -->
+
+            <div class="flex item-center gap-6 border-b w-11/12 h-10 overflow-hidden relative">
+
+                <!-- + -->
+
+                <div class="">
+                    <a href="">
+                        <svg width="19" height="19" class="jn jo jp">
+                            <path d="M9 9H3v1h6v6h1v-6h6V9h-6V3H9v6z" fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Start Words -->
+
+                <a href="" class="w-16" style="border-bottom: 1px solid rgb(36, 36, 36);">For You</a>
+
+                @foreach(['Following','Music','Photography','Docker','Sports','Gaming','Language'] as $item)
+
+                    <a href="" class="text-gray42">{{$item}}</a>
+
+                @endforeach
+
+                <!-- End Words -->
+
+                <!-- Arrow -->
+
+                <div class="absolute right-1">
+                    <svg class="arrow-left-19px_svg__svgIcon-use" width="26px" height="26px" viewBox="0 0 19 19" aria-hidden="true" style="transform: rotate(180deg);">
+                        <path d="M11.47 13.97L6.99 9.48 11.47 5l.55.5-3.99 3.98 4 4z" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+
+            </div>
+            
+            <!-- End Topics -->
+            
+            @endif
+
             @foreach(['','','','','','','','','',''] as $item)
 
             <div class="post w-full p-4 border-b-2 border-inherit">
 
                 <div class="w-full flex items-center gap-2 mb-2">
 
-                    <img class="w-8 rounded-full" src="https://scontent.fcai22-2.fna.fbcdn.net/v/t39.30808-6/344770515_577976204314118_2783696838824807599_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHpFExMlDqM7xtXaRj3a4Kmne32TYCw_Wyd7fZNgLD9bFQ-ymfcSAx1hw7CN9qYRjw6BLE0HpUiFYzYYKcb0qcp&_nc_ohc=a_-j6JTj5McAb6zE8rE&_nc_ht=scontent.fcai22-2.fna&oh=00_AfCaHjxTTZdh_5FEMyfkzRsidtk1kc08YoqEwlY9nB66kg&oe=661F052F" alt="">
+                    <img class="w-8 h-8 rounded-full" src="https://scontent.fcai22-2.fna.fbcdn.net/v/t39.30808-6/344770515_577976204314118_2783696838824807599_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tFx_GYNj_5sQ7kNvgGd-Ueo&_nc_ht=scontent.fcai22-2.fna&oh=00_AfDUDeUYHX6wggcfVZWIZKZm0IvTvgnLvYca2asI2kqMfA&oe=66414C2F" alt="">
 
                     <p>Username</p>
 
